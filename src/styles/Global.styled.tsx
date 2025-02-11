@@ -1,0 +1,50 @@
+import {createGlobalStyle} from "styled-components";
+import {theme} from "./Theme.tsx";
+
+export const GlobalStyles = createGlobalStyle`
+    
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        line-height: 1.2;
+    }
+    
+    a {
+        text-decoration: none;
+        color: ${theme.colors.fontGrey}
+    }
+    
+    ul {
+        list-style: none;
+    }
+
+    button {
+        background-color: unset;
+        border: none;
+    }
+    
+    section {
+        padding: 120px 0;
+        
+        @media ${theme.media.tablet} {
+            padding: 80px 0;
+        }
+
+        @media ${theme.media.mobile} {
+            padding: 60px 0;
+        }
+            
+        
+    }
+    
+`
