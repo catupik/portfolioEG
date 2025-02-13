@@ -1,33 +1,20 @@
+import React from 'react';
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.tsx";
 
-export const HeaderMenu = (props: {menuItems: Array<string>}) => {
+export const Menu: React.FC<{menuItems: Array<string>}> = (props: {menuItems: Array<string>}) => {
     return (
-        <StyledHeaderMenu>
-            <ul>
-                {props.menuItems.map((item, index)=>{
-                    return <ListItem key={index}>
-                        <Link href="#">{item}</Link>
-                    </ListItem>
-                })}
 
-            </ul>
-        </StyledHeaderMenu>
+        <ul>
+            {props.menuItems.map((item, index) => {
+                return <ListItem key={index}>
+                    <Link href="#">{item}</Link>
+                </ListItem>
+            })}
+
+        </ul>
     );
 };
-
-const StyledHeaderMenu = styled.nav`
-    ul {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-    }
-
-    @media ${theme.media.tablet} {
-        display: none;
-    }
-    
-`
 
 const ListItem = styled.li`
     

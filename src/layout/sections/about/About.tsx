@@ -42,20 +42,25 @@ const StyledAbout = styled.section`
     
 `
 const TextWrapper = styled.div`
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
 
     @media ${theme.media.tablet} {
 
         width: 100%;
+        ${FlexWrapper} {
+            flex-direction: row;
+        }
     }
+    
+    
     
 `
 const Text = styled.p`
     ${font({ weight: 400, lineHeight: '185%', Fmax: 20, Fmin: 16, color: `${theme.colors.fontGrey}` })}
   
-    margin: 10px 0 40px;
+    margin: 5px 0 20px;
     width: 100%;
 
    
@@ -76,9 +81,6 @@ const Photo = styled.img`
         height: 100%;
         width: 100%;
     }
-    // @media ${theme.media.mobile} {
-    //     height: 100%;
-    //     width: 100%;
-    // }
+  
 `
 

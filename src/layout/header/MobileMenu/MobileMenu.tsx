@@ -1,20 +1,14 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.tsx";
+import {Menu} from "../menu/Menu.tsx";
 
-export const MobileMenu = (props: {menuItems: Array<string>}) => {
+export const MobileMenu: React.FC<{menuItems: Array<string>}> = (props: {menuItems: Array<string>}) => {
     return (
         <StyledMobileMenu>
-            <BurgerMenu isOpen={true}><span></span></BurgerMenu>
+            <BurgerMenu isOpen={false}><span></span></BurgerMenu>
 
             <MobileMenuPopup isOpen={false}>
-                <ul>
-                    {props.menuItems.map((item, index) => {
-                        return <ListItem key={index}>
-                            <Link href="#">{item}</Link>
-                        </ListItem>
-                    })}
-
-                </ul>
+                <Menu menuItems={props.menuItems}/>
             </MobileMenuPopup>
 
         </StyledMobileMenu>
@@ -55,23 +49,26 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     }
 `
 const BurgerMenu = styled.button<{isOpen: boolean}>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    height: 50px;
-    width: 50px;
-    top: 0;
-    right: 0;
+    height: 45px;
+    width: 45px;
+    top: 55px;
+    right: 20px;
     z-index: 9999999;
-  
+    background-color: ${theme.colors.accent};
     
     span {
         display: block;
         width: 36px;
         height: 2px;
         background-color: ${theme.colors.secondaryBg};
-        position: absolute;
-        left: 50%;
-        bottom: 40%;
-
+        position: relative;
+        //left: 50%;
+        //bottom: 40%;
+        
         ${props => props.isOpen && css<{isOpen: boolean}>`
             background-color: rgba(255, 255, 255, 0);
 
@@ -114,30 +111,3 @@ const BurgerMenu = styled.button<{isOpen: boolean}>`
     
 `
 
-const ListItem = styled.li`
-    
-    position: relative;
-    
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -5px; 
-        width: 100%;
-        height: 2px; 
-        background: ${theme.colors.accent};
-        transform: scaleX(0);
-        transition: transform 0.7s ease-in-out;
-    }
-
-    &:hover::after {
-        transform: scaleX(1);
-    }
-`
-const Link = styled.a`
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0.02em;
-    color: ${theme.colors.fontLight};
-`

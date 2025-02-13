@@ -38,7 +38,7 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
     background-color: ${theme.colors.primaryBg};
     display: flex;
-    padding: 50px 0;
+    padding: 20px 0;
     
 `
 
@@ -64,11 +64,12 @@ const SocialLink = styled.a`
    `
 
 const Copyright = styled.small`
-color: ${theme.colors.iconGrey};
-    span:first-child{
-        color: ${theme.colors.accent};
-    }
-    span:last-child{
-        color: white;
-    }
+    white-space: nowrap;
+    color: ${theme.colors.iconGrey};
+        span:first-child{
+            color: ${theme.colors.accent};
+        }
+        span:last-child{
+            color: white;
+        }
 `

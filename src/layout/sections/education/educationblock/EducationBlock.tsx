@@ -6,27 +6,27 @@ import {FlexWrapper} from "../../../../components/FlexWrapper.tsx";
 type EducationBlockPropsType = {
     year: string
     education: string;
-    lineWidth?: string;
-    lineLeft?: string;
+    // lineWidth?: string;
+    // lineLeft?: string;
 }
 
-type YearPropsType = {
-    lineWidth?: string;
-    lineLeft?: string;
-}
+// type YearPropsType = {
+//     lineWidth?: string;
+//     lineLeft?: string;
+// }
 
 export const EducationBlock = (props: EducationBlockPropsType) => {
     return (
         <StyledEducationBlock>
             <FlexWrapper direction="column">
-                <Year lineWidth={props.lineWidth} lineLeft={props.lineLeft}>{props.year}</Year>
+                <Year >{props.year}</Year>
                 <Text>{props.education}</Text>
             </FlexWrapper>
         </StyledEducationBlock>
     );
 };
 
-const Year = styled.h2<YearPropsType>`
+const Year = styled.h2`
     ${font({ weight: 600, Fmax: 26, Fmin: 26, color: `${theme.colors.fontDark}`})};
     text-align: center;
     margin-bottom: 50px;
@@ -53,26 +53,26 @@ const Year = styled.h2<YearPropsType>`
         }
     }
     
-    &:after{
-        content: '';
-        height: 8px;
-        width: ${props => props.lineWidth || '135%'};
-     
-        background-color: ${theme.colors.accent};
-        position: absolute;
-        left: ${props => props.lineLeft || '50%'};
-       
-        top:160%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-
-        @media ${theme.media.tablet} {
-            rotate: 90deg;
-            left: -20%;
-            width: 200%;
-
-        }
-    }   
+    // &:after{
+    //     content: '';
+    //     height: 8px;
+    //     width: ${props => props.lineWidth || '135%'};
+    // 
+    //     background-color: ${theme.colors.accent};
+    //     position: absolute;
+    //     left: ${props => props.lineLeft || '50%'};
+    //   
+    //     top:160%;
+    //     transform: translate(-50%, -50%);
+    //     z-index: 1;
+    //
+    //     @media ${theme.media.tablet} {
+    //         rotate: 90deg;
+    //         left: -20%;
+    //         width: 200%;
+    //
+    //     }
+    // }   
     
 `
 

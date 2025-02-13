@@ -33,7 +33,7 @@ export const SectionTitle = (props: StyledTitlePropsType) => {
 };
 
 const WholeTitle = styled.div`
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     
     @media ${theme.media.tablet} {
         margin-bottom: 10px;
@@ -45,7 +45,7 @@ const StyledTitle = styled.h2<SectionTitlePropsType>`
     
   
     text-align: ${(props) => props.textA || "center"};
-    margin-bottom: 15px;
+    //margin-bottom: -10px;
     
     @media ${theme.media.tablet} {
         white-space: nowrap;

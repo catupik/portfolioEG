@@ -21,7 +21,7 @@ export const Main = () => {
                 <SocialList>
                     <SocialItem>
                         <SocialLink>
-                            <Icon iconId={"gitS"}/>
+                            <Icon iconId={"gitS"} viewBox={"0 0 50 50"}/>
                         </SocialLink>
                     </SocialItem>
                     <SocialItem>
@@ -49,13 +49,10 @@ const StyledMain = styled.section`
     min-height: 100vh;
     background-position: center;
     position: relative;
-    
     color: white;
     display: flex;
 
-    @media ${theme.media.tablet} {
-        //min-height: 100%;
-    }
+  
 `
 
 
@@ -63,7 +60,7 @@ const MainTitle =styled.h1`
     ${font({ weight: 400, lineHeight: '165%', Fmax: 18, Fmin: 14, color: `${theme.colors.secondaryBg}` })}
      letter-spacing: 0.01em;
      opacity: 0.9;
-     margin-top: 45px;
+     margin-top: 20px;
 
     @media ${theme.media.mobile} {
         margin-top: 25px;
@@ -73,8 +70,8 @@ const MainTitle =styled.h1`
 
 const Name = styled.h2`
     ${font({family:'"Source Sans 3", sans-serif', weight: 700, lineHeight: '113%', Fmax: 70, Fmin: 36, color: `${theme.colors.accent}` })}
-    
     letter-spacing: 0.02em;
+    margin-top: 20px;
     
 `
 const Hello = styled(Name)`
@@ -97,7 +94,7 @@ const SocialList = styled.ul`
     display: flex;
     flex-direction: row;
     position: absolute;
-    bottom: 55px;
+    bottom: 50px;
 `
 const SocialItem = styled.li`
 `

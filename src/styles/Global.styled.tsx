@@ -17,6 +17,7 @@ export const GlobalStyles = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         line-height: 1.2;
+        min-width: 360px;
     }
     
     a {
@@ -34,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     
     section {
-        padding: 120px 0;
+        padding: 130px 0;
         
         @media ${theme.media.tablet} {
             padding: 80px 0;

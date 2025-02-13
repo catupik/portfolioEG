@@ -34,7 +34,7 @@ export const Project = (props: ProjectPropsType) => {
 const StyledProject = styled.div`
 
     max-width: 410px;
-    width: 350px;
+    //width: 350px;
     
     
 `
