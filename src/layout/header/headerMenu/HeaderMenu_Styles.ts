@@ -1,21 +1,36 @@
-import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.tsx";
-import {Menu} from "../menu/Menu.tsx";
+import styled, {css} from "styled-components";
 
-export const MobileMenu: React.FC<{menuItems: Array<string>}> = (props: {menuItems: Array<string>}) => {
-    return (
-        <StyledMobileMenu>
-            <BurgerMenu isOpen={false}><span></span></BurgerMenu>
+const MenuItem = styled.li`
+    
+    position: relative;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px; 
+        width: 100%;
+        height: 2px; 
+        background: ${theme.colors.accent};
+        transform: scaleX(0);
+        transition: transform 0.7s ease-in-out;
+    }
 
-            <MobileMenuPopup isOpen={false}>
-                <Menu menuItems={props.menuItems}/>
-            </MobileMenuPopup>
+    &:hover::after {
+        transform: scaleX(1);
+    }
+`
+const Link = styled.a`
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: ${theme.colors.fontLight};
+`
 
-        </StyledMobileMenu>
-    );
-};
-
-const StyledMobileMenu = styled.nav`
+// Mobile menu
+const MobileMenu = styled.nav`
     display: none;
     
     @media ${theme.media.tablet} {
@@ -110,4 +125,24 @@ const BurgerMenu = styled.button<{isOpen: boolean}>`
         }
     
 `
+// Desktop Menu
 
+const DesktopMenu = styled.nav`
+    ul {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+    }
+ 
+`
+
+
+export const S = {
+    Link,
+    MenuItem,
+    MobileMenu,
+    MobileMenuPopup,
+    BurgerMenu,
+    DesktopMenu,
+
+}

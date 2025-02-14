@@ -1,12 +1,10 @@
-import styled from "styled-components";
 import {Statistic} from "./statistic/Statistic.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-import {theme} from "../../../styles/Theme.tsx";
 import {Container} from "../../../components/Container.tsx";
-
+import {S} from './Statistics_Styles.ts'
 export const Statistics = () => {
     return (
-        <StyledStatistics>
+        <S.Statistics>
             <Container>
                 <FlexWrapper wrap={"wrap"} justifyC={"space-around"} alignI={"center"}>
                     <Statistic number={"5+"} text={"completed pet projects"}/>
@@ -16,20 +14,7 @@ export const Statistics = () => {
             </Container>
 
 
-        </StyledStatistics>
+        </S.Statistics>
     );
 };
 
-const StyledStatistics = styled.section`
-    background-color: ${theme.colors.secondaryBg};
-    
-    @media ${theme.media.tablet} {
-        ${FlexWrapper}{
-            flex-direction: column;
-            align-items: flex-start;
-            align-content: center;
-        }
-    }
-    
-   
-`

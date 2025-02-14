@@ -1,8 +1,8 @@
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Container} from "../../components/Container.tsx";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
-import {DesktopMenu} from "./desktopMenu/DesktopMenu.tsx";
-import {MobileMenu} from "./MobileMenu/MobileMenu.tsx";
+import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu.tsx";
+import {MobileMenu} from "./headerMenu/MobileMenu/MobileMenu.tsx";
 import {S} from './Header_Styles.ts'
 import React, {useEffect, useState} from "react";
 

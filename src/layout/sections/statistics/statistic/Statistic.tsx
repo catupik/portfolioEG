@@ -1,6 +1,4 @@
-import styled from "styled-components";
-import {theme} from "../../../../styles/Theme.tsx";
-import {font} from "../../../../styles/Common.tsx";
+import {S} from './../Statistics_Styles.ts'
 
 
 type StatisticPropsType = {
@@ -8,25 +6,14 @@ type StatisticPropsType = {
     text: string
 }
 
-export const Statistic = (props: StatisticPropsType) => {
+export const Statistic: React.FC<StatisticPropsType> = (props: StatisticPropsType) => {
     return (
-        <StyledStatistic>
+        <S.Statistic>
 
-                <Number>{props.number}</Number>
-                <Text>{props.text}</Text>
+                <S.Number>{props.number}</S.Number>
+                <S.Text>{props.text}</S.Text>
 
-        </StyledStatistic>
+        </S.Statistic>
     );
 };
 
-const StyledStatistic = styled.div`
-    
-`
-const Number = styled.h2`
-    ${font({family: '"Source Sans 3", sans-serif', weight: 900, Fmax: 105, Fmin: 50, color: `${theme.colors.statisticGrey}` })};
-`
-const Text = styled.p`
-    ${font({ weight: 400, Fmax: 18, Fmin: 16, color: `${theme.colors.statisticDescription}` })};
-    letter-spacing: 0.01em;;
-
-`
