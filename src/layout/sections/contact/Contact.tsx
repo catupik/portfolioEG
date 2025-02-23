@@ -7,7 +7,7 @@ import {S} from './Contact_Styles.ts'
 
 export const Contact: React.FC = () => {
     return (
-        <S.Contact>
+        <S.Contact id="contact">
             <Container>
                 <SectionTitle textColor={theme.colors.fontLight} titleText={"Let’s work together"} underTextFirstLine={"If you are looking to hire a front-end developer"} underTextSecondaryLine={"I am currently available for collaboration"} underTextColor={theme.colors.iconGrey}
                     textA={"center"}/>

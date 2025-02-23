@@ -6,7 +6,7 @@ import {MobileMenu} from "./headerMenu/MobileMenu/MobileMenu.tsx";
 import {S} from './Header_Styles.ts'
 import React, {useEffect, useState} from "react";
 
-const headerItems = ["Home", "About", "Skills", "Projects", "Contact"]
+
 
 export const Header: React.FC = () => {
     const [width, setWidth] = useState(window.innerWidth);
@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
                 <FlexWrapper justifyC="space-between" alignI="center">
                     <Logo/>
 
-                    {width < breakPoint? <MobileMenu menuItems={headerItems}/> :  <DesktopMenu menuItems={headerItems} /> }
+                    {width < breakPoint? <MobileMenu /> :  <DesktopMenu /> }
 
 
                 </FlexWrapper>

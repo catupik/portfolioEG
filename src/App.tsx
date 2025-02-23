@@ -9,6 +9,7 @@ import {About} from "./layout/sections/about/About.tsx";
 import {Education} from "./layout/sections/education/Education.tsx";
 import {Contact} from "./layout/sections/contact/Contact.tsx";
 import {Footer} from "./layout/footer/Footer.tsx";
+import {GoTopBtn} from "./components/goTopBtn/GoTopBtn.tsx";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <Statistics/>
       <Contact/>
       <Footer/>
+        <GoTopBtn/>
     </>
 
   )

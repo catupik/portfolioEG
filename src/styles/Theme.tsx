@@ -20,7 +20,11 @@ export const theme = {
             tablet: "screen and (max-width: 768px)", //from 0 till 768
             mobile: "screen and (max-width: 576px)", //from 0 till 576
             desktop: "screen and (min-width: 1140px)",
-            laptop: "screen and (max-width: 1024px)",
-        }
+            laptop: "screen and (max-width: 1059px)",
+        },
+
+    animations: {
+        transition:  '0.2s ease-in-out',
+    }
 }
 

@@ -1,66 +1,25 @@
-import styled from "styled-components";
-import {theme} from "../../../../styles/Theme.tsx";
+import {S} from './TabMenu_Styles.ts'
 
+export type TabsStatusType = "all" | "react" | "js";
 
+type TabMenuPropsType = {
+    tabsItems: Array<{status: TabsStatusType ,title: string}>,
+    changeFilterStatus: (value:TabsStatusType  )=>void,
+    currentFilterStatus: string,
+}
 
-export const TabMenu = (props: {menuItems: Array<string>}) => {
+export const TabMenu  = (props: TabMenuPropsType)  => {
     return (
-        <StyledTabMenu>
+        <S.TabMenu>
             <ul>
-                {props.menuItems.map((item, index)=>{
-                    return <ListItem key={index}>
-                        <Link href="#">{item}</Link>
-                    </ListItem>
+                {props.tabsItems.map((item, index)=>{
+                    return <S.ListItem key={index}>
+                        <S.Link active={props.currentFilterStatus===item.status} as={"button"} onClick={()=>{props.changeFilterStatus(item.status)}}>{item.title}</S.Link>
+                    </S.ListItem>
                 })}
 
             </ul>
-        </StyledTabMenu>
+        </S.TabMenu>
     );
 };
 
-const StyledTabMenu = styled.nav`
-    
-    ul {
-        display: flex;
-        //gap: 30px;
-        justify-content: space-between;
-        max-width: 365px;
-        width: 100%;
-        margin: 0 auto 50px;
-    }
-`
-const ListItem = styled.li`
-    position: relative;
-    padding-left: 20px;
-    
-   
-
-    &::before {
-        content: "•"; 
-        color: ${theme.colors.accent}; 
-        font-size: 20px;
-        position: absolute;
-        left: -10px; 
-    }
-    &:last-child::after {
-        content: "•";
-        color: ${theme.colors.accent};
-        font-size: 20px;
-        margin-left: 15px; 
-    }
-`
-
-const Link = styled.a`
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    letter-spacing: 0.01em;
-
-    &:hover{
-        color: ${theme.colors.accent};
-        transition-duration: 1s;
-        transform: translateY(-4px);
-        display: inline-block
-    }
-   
-`

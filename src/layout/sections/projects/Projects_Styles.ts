@@ -6,7 +6,7 @@ import {font} from "../../../styles/Common.tsx";
 const Projects = styled.section`
     
     background-color: white;
-    @media ${theme.media.tablet} {
+    @media ${theme.media.laptop} {
         ${Button}{
             display: none;
         }
@@ -22,8 +22,8 @@ justify-content: center;
 
 const Project = styled.div`
 
-    max-width: 410px;
-    //width: 350px;
+    width: 330px;
+    flex-grow: 1;
     
     
 `
@@ -64,7 +64,7 @@ const ImageWrapper = styled.div`
         }
     }
     
-    @media ${theme.media.tablet} {
+    @media ${theme.media.laptop} {
         &::before{
 
             opacity: 1;

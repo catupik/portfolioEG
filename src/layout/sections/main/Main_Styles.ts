@@ -59,10 +59,10 @@ const SocialItem = styled.li`
 const SocialLink = styled.a`
 color: ${theme.colors.iconGrey};
     cursor: pointer;
+    transition:  ${theme.animations.transition};
 
     &:hover {
         color: ${theme.colors.accent};
-        transition-duration: 1s;
         transform: translateY(-4px);
         display: inline-block;
     }

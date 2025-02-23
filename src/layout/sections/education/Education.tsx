@@ -15,7 +15,7 @@ const educationData = [
 
 export const Education: React.FC = () => {
     return (
-        <S.Education>
+        <S.Education id="education">
             <Container>
                 <FlexWrapper direction="column" justifyC="space-around">
                     <SectionTitle paddingTop={"120px"}
@@ -25,12 +25,12 @@ export const Education: React.FC = () => {
 
                     />
 
-                <FlexWrapper justifyC={"center"} alignI={"center"} gapI={"34px"}>
+                <S.EducationWrapper>
                     {educationData.map((e, index) => (
                         <EducationBlock key={index} year={e.year} education={e.education}/>
                     ))}
                     
-                </FlexWrapper>
+                </S.EducationWrapper>
                 </FlexWrapper>
             </Container>
 

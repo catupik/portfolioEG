@@ -13,7 +13,7 @@ const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media ${theme.media.tablet} {
+    @media screen and (max-width: 1079px) {
 
         width: 100%;
         ${FlexWrapper} {

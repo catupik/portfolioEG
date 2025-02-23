@@ -1,6 +1,5 @@
 import {theme} from "../../../styles/Theme.tsx";
 import styled from "styled-components";
-import {Container} from "../../../components/Container.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {font} from "../../../styles/Common.tsx";
 
@@ -9,50 +8,7 @@ const Education = styled.section`
     background-color: ${theme.colors.secondaryBg};
     display: flex;
     padding: 100px 0;
-   
-        ${Container}{
-            ${FlexWrapper}{
-            ${FlexWrapper}:nth-of-type(2) {
-                    
-                  
-                    //align-items: center;
-                    //gap: 20px;
-                
-                @media ${theme.media.tablet} {
-                    flex-direction: column;
-                   
-                }
-            }
-       
-    }
- 
-   
     
-
-    ${Container}:first-child  {
-            position: relative;
-
-            &:after {
-                content: '';
-                height: 8px;
-                background-color: ${theme.colors.accent};
-                position: absolute;
-                width: 100%;
-                top: 100px;
-                left: 100px;
-                transform: translate(-50%, -50%);
-                z-index: 1;
-
-                @media ${theme.media.tablet} {
-                    rotate: 90deg;
-                    left: -20%;
-                    width: 200%;
-
-                }
-        }
-    }
-}
-  
 `
 
 //education block
@@ -78,32 +34,11 @@ const Year = styled.h2`
         z-index: 2;
 
         @media ${theme.media.tablet} {
-            bottom: -500%;
+            left: 135%;
+            bottom: -25%;
             
         }
     }
-    
-    // &:after{
-    //     content: '';
-    //     height: 8px;
-    //     width: ${props => props.lineWidth || '135%'};
-    // 
-    //     background-color: ${theme.colors.accent};
-    //     position: absolute;
-    //     left: ${props => props.lineLeft || '50%'};
-    //   
-    //     top:160%;
-    //     transform: translate(-50%, -50%);
-    //     z-index: 1;
-    //
-    //     @media ${theme.media.tablet} {
-    //         rotate: 90deg;
-    //         left: -20%;
-    //         width: 200%;
-    //
-    //     }
-    // }   
-    
 `
 
 const EducationBlock = styled.div`
@@ -113,12 +48,12 @@ const EducationBlock = styled.div`
 
     @media ${theme.media.tablet} {
         padding: 50px 0 50px;
-        max-width: 500px;
+        max-width: 100%;
         ${FlexWrapper}{
             flex-direction: row;
-            
             align-items: center;
-            gap: 20px;
+            gap: 60px;
+            max-width: max-content;
         }
         
         
@@ -127,9 +62,43 @@ const EducationBlock = styled.div`
     
 `
 
+const EducationWrapper = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 34px;
+    
+    &:after {
+        content: '';
+        height: 8px;
+        background-color: ${theme.colors.accent};
+        position: absolute;
+        width: 80%;
+        top: 150px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        @media ${theme.media.tablet} {
+            width: 8px;
+            height: 80%;
+            top: 48%;
+            left: 84px;
+        }
+        
+    }
+    @media ${theme.media.tablet} {
+        flex-direction: column;
+
+    }
+
+`
+
 const Text = styled.p`
     ${font({ weight: 600, lineHeight: '185%', Fmax: 18, Fmin: 18, color: `${theme.colors.fontGrey}`})};
     text-align: center;
+    @media ${theme.media.tablet} {
+        text-align: left;
+    }
     
 `
 export const S = {
@@ -137,5 +106,6 @@ export const S = {
     Year,
     EducationBlock,
     Text,
+    EducationWrapper
 
 }

@@ -10,7 +10,7 @@ import {S} from './About_Styles.ts'
 export const About: React.FC = () => {
 
     return (
-        <S.About>
+        <S.About id="about">
             <Container>
                 <FlexWrapper alignI={"center"} justifyC={"space-around"} gapI={"20px"} wrap={"wrap"} >
                     <S.TextWrapper>

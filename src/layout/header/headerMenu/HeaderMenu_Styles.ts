@@ -1,32 +1,36 @@
 import {theme} from "../../../styles/Theme.tsx";
 import styled, {css} from "styled-components";
+import {Link} from "react-scroll";
+
 
 const MenuItem = styled.li`
     
-    position: relative;
-    
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -5px; 
-        width: 100%;
-        height: 2px; 
-        background: ${theme.colors.accent};
-        transform: scaleX(0);
-        transition: transform 0.7s ease-in-out;
-    }
-
-    &:hover::after {
-        transform: scaleX(1);
-    }
 `
-const Link = styled.a`
+const NavLink = styled(Link)`
     font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
     font-size: 16px;
     letter-spacing: 0.02em;
-    color: ${theme.colors.fontLight};
+    color: white;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background: ${theme.colors.accent};
+        transform: scaleX(0);
+        transition: transform ${theme.animations.transition};
+        
+    }
+
+    &:hover::after, &.active {
+        transform: scaleX(1);
+    }
 `
 
 // Mobile menu
@@ -70,10 +74,11 @@ const BurgerMenu = styled.button<{isOpen: boolean}>`
     position: fixed;
     height: 45px;
     width: 45px;
-    top: 55px;
+    top: 15px;
     right: 20px;
     z-index: 9999999;
-    background-color: ${theme.colors.accent};
+    
+   
     
     span {
         display: block;
@@ -99,7 +104,7 @@ const BurgerMenu = styled.button<{isOpen: boolean}>`
             //left: 50%;
             //bottom: 50%;
             transform: translateY(-10px);
-
+            transition:  ${theme.animations.transition};
             ${props => props.isOpen && css<{isOpen: boolean}>`
                 transform: rotate(-45deg) translateY(0);
 
@@ -116,7 +121,7 @@ const BurgerMenu = styled.button<{isOpen: boolean}>`
             //left: 50%;
             //bottom: 50%;
             transform: translateY(10px);
-
+            transition:  ${theme.animations.transition};
             ${props => props.isOpen && css<{isOpen: boolean}>`
                 transform: rotate(45deg) translateY(0);
                 width: 36px;
@@ -128,6 +133,7 @@ const BurgerMenu = styled.button<{isOpen: boolean}>`
 // Desktop Menu
 
 const DesktopMenu = styled.nav`
+    
     ul {
         display: flex;
         gap: 30px;
@@ -138,7 +144,7 @@ const DesktopMenu = styled.nav`
 
 
 export const S = {
-    Link,
+    NavLink,
     MenuItem,
     MobileMenu,
     MobileMenuPopup,

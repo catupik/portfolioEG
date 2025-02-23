@@ -22,7 +22,8 @@ export const GlobalStyles = createGlobalStyle`
     
     a {
         text-decoration: none;
-        color: ${theme.colors.fontGrey}
+        color: ${theme.colors.fontGrey};
+        cursor: pointer;
     }
     
     ul {
@@ -32,20 +33,17 @@ export const GlobalStyles = createGlobalStyle`
     button {
         background-color: unset;
         border: none;
+        cursor: pointer;
     }
     
     section {
         padding: 130px 0;
-        
-        @media ${theme.media.tablet} {
-            padding: 80px 0;
-        }
 
-        @media ${theme.media.mobile} {
+        @media ${theme.media.laptop} {
             padding: 60px 0;
         }
-            
         
     }
+    
     
 `

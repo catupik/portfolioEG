@@ -23,7 +23,7 @@ const skillData = [
 
 export const Skills = () => {
     return (
-        <S.Skills>
+        <S.Skills id="skills">
             <Container>
             <SectionTitle paddingTop={"120px"} textColor={theme.colors.fontLight} titleText={"Skills"} textA={"center"} underTextFirstLine={"Technologies I’ve been working with recently"}
             underTextColor={theme.colors.iconGrey}/>
